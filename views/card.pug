@@ -1,0 +1,27 @@
+extends app
+
+block card
+	section(class='flashcards')
+		.card(class=`card-question`)
+			.card-header
+			h1.card-title Question
+			#content
+				h2= questionText
+				form(action='/cards', method='post')
+					.answers
+						.answerText
+							input#ans1(type='radio', name='ans', value=`${answerArr[0].correct}`)
+							label(for='ans1')= answerArr[0].text
+						.answerText
+							input#ans2(type='radio', name='ans', value=`${answerArr[1].correct}`)
+							label(for='ans2')= answerArr[1]['text']
+						.answerText
+							input#ans3(type='radio', name='ans', value=`${answerArr[2].correct}`)
+							label(for='ans3')= answerArr[2].text
+						.answerText
+							input#ans4(type='radio', name='ans', value=`${answerArr[3].correct}`)
+							label(for='ans4')= answerArr[3].text
+					.card-next
+						button.namecard-submit.nextBtn(type='submit') Next Question
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+	script(src='/static/js/app.js')

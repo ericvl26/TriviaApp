@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flash Cards</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="img/trivia-night-logo.png">
+        <!-- <p>An app to help you study</p> -->
+    </header>
+    <section class="namecard">
+        <div class="namecard-hello">
+            <p class="namecard-greeting">Welcome, John!</p>
+            <form action="/goodbye" method="POST" class="namecard-exit">
+                <button type="submit"><img src="img/close.svg"></button>
+            </form>
+        </div>
+    </section>
+    <section class="flashcards">
+        <div class="card card-question">
+            <div class="card-header">
+            </div>
+            <h1 class="card-title">Question</h1>
+            <div id="content">
+                <h2>Which HTML element can contain JavaScript?</h2>
+
+                <form action="/cards" method="post">
+                    <div class='answers'>
+                        <div class='answerText'>
+                            <input type="radio" name="ans" id="ans1" value="a1">
+                            <label for='ans1'>This is answer one</label>
+                        </div>
+                        <div class='answerText'>
+                            <input type="radio" name="ans" id="ans2" value="a2">
+                            <label for='ans2'>This is answer one dfsfdsfsdfsdfds</label>
+                        </div>
+                        <div class='answerText'>
+                            <input type="radio" name="ans" id="ans3" value="a3">
+                            <label for='ans3'>This is answer 2333333333333333</label>
+                        </div>
+                        <div class='answerText'>
+                            <input type="radio" name="ans" id="ans4" value="a4">
+                            <label for='ans4'>This is answer 11 This is answer 11 This is answer 11</label>
+                        </div>
+
+                    </div>
+                    <div class="card-next">
+                        <button class="namecard-submit" type="submit">Next Question</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+        <script src="app.js"></script>
+    </section>
+</body>
+
+</html>

@@ -1,5 +1,22 @@
 extends app.pug
 
 block intro
+	h1.namecard-prompt Select a category
+	form(action='/cards', method='post')
+		.categoryWrapper
+			.catText
+				input#cat1(type='radio', name='cat', value='c1')
+				label(for='1') Sports
+			.catText
+				input#cat2(type='radio', name='cat', value='a2')
+				label(for='ans2') Music
+			.catText
+				input#cat3(type='radio', name='cat', value='a3')
+				label(for='ans3') Videogames
+			.catText
+				input#cat(type='radio', name='cat', value='a4')
+				label(for='ans4') stuff
+		h1.namecard-prompt Let's get started
+		button.namecard-submit.cat-submit(type='submit') Begin!
 	h1.namecard-prompt Let's get started
 	a.namecard-submit(href='/cards') Begin!

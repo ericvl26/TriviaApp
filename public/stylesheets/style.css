@@ -80,6 +80,7 @@ input {
   background-color: #F5F3ED;
   max-width: 400px;
   margin: auto;
+  margin-bottom: 80px;
   color: #727C85;
   text-align: center;
   border-radius: 20px;
@@ -109,7 +110,8 @@ input {
   font-size: 26px;
   font-weight: 400;
   display: block;
-  padding-top: 45px;
+  margin-top: 15px;
+  /*padding-top: 45px;*/
 }
 
 .namecard-name {
@@ -128,6 +130,10 @@ input {
   width: 100%;
   display: block;
   box-sizing: border-box;
+}
+
+.cat-submit {
+  margin-top: 20px;
 }
 
 .namecard-submit:hover {
@@ -157,7 +163,7 @@ input {
 }
 
 
-/* Flash Cards */
+/***********  Trivia question page **************/
 .flashcards {
   margin-top: 20px;
   margin-bottom: 80px;
@@ -329,6 +335,61 @@ input {
   text-decoration: none;
   color: #727C85;
 }
+
+/***********  End trivia question page **************/
+
+
+
+/***********  Index category page **************/
+
+.categoryWrapper {
+/*  margin-bottom: 15px;
+  padding-bottom: 15px;*/
+}
+
+.catText {
+   width: 360px;
+   border: 2px #bb723c solid;
+   border-bottom: 3px solid #bb723c;
+   border-radius: 5px;
+   padding: 12px 5px;
+   margin: 15px auto;
+   cursor: pointer;
+   color: #bb723c;
+   background-color: #f7d27d2b;
+   /*font-weight: bold;*/
+   font-size: 1.1em;
+}
+
+.catText input {
+  /*visibility: hidden;*/
+  width: initial;
+  height: initial;
+}
+
+.catText label {
+    cursor: pointer;
+    /*padding: 12px 20%;*/
+    margin: 15px 0;
+}
+
+.catText:hover {
+   /*color: white;*/
+/*   background-color: #85edffe6;*/
+  background-color: #bb723cb3;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+
+
+/***********  end Index category page **************/
+
+
 
 
 /* 404 Error */

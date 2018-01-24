@@ -17,8 +17,31 @@
                 <button type="submit"><img src="img/close.svg"></button>
             </form>
         </div>
-        <h1 class="namecard-prompt">Let's get started</h1>
-        <a class="namecard-submit" href="card-front.html">Begin!</a>
+        <h1 class="namecard-prompt">Select a category</h1>
+
+        <form action="/cards" method="post">
+            <div class='categoryWrapper'>
+                <div class='catText'>
+                    <input type="radio" name="cat" id="cat1" value="c1">
+                    <label for='1'>Sports</label>
+                </div>
+                <div class='catText'>
+                    <input type="radio" name="cat" id="cat2" value="a2">
+                    <label for='ans2'>Music</label>
+                </div>
+                <div class='catText'>
+                    <input type="radio" name="cat" id="cat3" value="a3">
+                    <label for='ans3'>Videogames</label>
+                </div>
+                <div class='catText'>
+                    <input type="radio" name="cat" id="cat" value="a4">
+                    <label for='ans4'>stuff</label>
+                </div>
+
+            </div>
+            <h1 class="namecard-prompt">Let's get started</h1>
+            <button class="namecard-submit cat-submit" type="submit">Begin!</button>
+        </form>
     </section>
 </body>
 

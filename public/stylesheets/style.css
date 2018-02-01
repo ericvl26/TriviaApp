@@ -80,7 +80,7 @@ input {
   background-color: #F5F3ED;
   max-width: 400px;
   margin: auto;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
   color: #727C85;
   text-align: center;
   border-radius: 20px;
@@ -134,6 +134,7 @@ input {
 
 .cat-submit {
   margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 .namecard-submit:hover {
@@ -343,8 +344,8 @@ input {
 /***********  Index category page **************/
 
 .categoryWrapper {
-/*  margin-bottom: 15px;
-  padding-bottom: 15px;*/
+  /*margin-bottom: 15px;*/
+  padding-bottom: 7px;
 }
 
 .catText {

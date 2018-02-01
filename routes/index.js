@@ -38,7 +38,15 @@ router.post('/goodbye', (req, res) => {
 	res.clearCookie('username');	
 	res.clearCookie('userScore');
 	res.clearCookie('completedQuestions');
+	res.clearCookie('category');
 	res.redirect("hello");
+});
+
+//Route to /category (POST route)
+router.post('/category', (req, res) => {
+	var category = req.body.cat;
+	res.cookie('category', category);
+	res.redirect("cards");
 });
 
 module.exports = router

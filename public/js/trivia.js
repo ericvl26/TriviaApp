@@ -18,15 +18,7 @@
 	// }
 
 
-            // //Remove any event handlers..if they exist.  Reset*
-            // $(audio[i]).off();
-
-            // // Add listener to auto play next track
-            // $(audio[i]).on('ended', function() {
-            //   audio[i+1].play();
-            //   audio[i].currentTime = 0; 
-            // });
-
+//cards page
 document.addEventListener('DOMContentLoaded', (e) => {
 
 	const divAnswers = document.querySelectorAll('.answerText');
@@ -77,6 +69,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
 			var old_element = document.getElementById("content");
 			var new_element = old_element.cloneNode(true);
 			old_element.parentNode.replaceChild(new_element, old_element);
+
 		})
 	})
+
 });

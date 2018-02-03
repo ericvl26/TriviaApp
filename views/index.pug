@@ -6,16 +6,19 @@ block intro
 		.categoryWrapper
 			.catText
 				input#cat1(type='radio', name='cat', value='sports')
-				label(for='1') Sports
+				label(for='cat1') Sports
 			.catText
 				input#cat2(type='radio', name='cat', value='music')
-				label(for='ans2') Music
+				label(for='cat2') Music
 			.catText
 				input#cat3(type='radio', name='cat', value='videogames')
-				label(for='ans3') Videogames
+				label(for='cat3') Videogames
 			.catText
-				input#cat(type='radio', name='cat', value='stuff')
-				label(for='ans4') stuff
+				input#cat(type='radio', name='cat', value='movies')
+				label(for='cat4') Movies
+			.catText
+				input#cat(type='radio', name='cat', value='history')
+				label(for='cat5') History
 		.getStarted
 			h1.namecard-prompt Let's get started
 			button.namecard-submit.cat-submit(type='submit') Begin!

@@ -4,6 +4,8 @@ const router = express.Router();
 const { data } = require('../data/triviaData.json');
 const { questions } = data;
 
+const maxQuestions = 5;
+
 // const { data1 } = require('../data/flashcardData.json');
 // const { cards } = data1;
 //^^ es6 equivalent above
@@ -11,7 +13,8 @@ const { questions } = data;
 // const cards = data.cards;
 
 router.get('/', (req, res) => {
-	const numberOfQuestions = questions.length;
+	const category = req.cookies.category;
+	const numberOfQuestions = questions[category].length;
 	const questionId = Math.floor( Math.random() * numberOfQuestions );
 	
 	res.redirect(`/cards/${questionId}`);
@@ -26,11 +29,12 @@ router.get('/:id', (req, res) => {
 	const { id } = req.params;
 
 	const name = req.cookies.username;
+	const category = req.cookies.category;
 
 	// Arrange answers into an array and sort.
-	const questionText = questions[id]['question'];
+	const questionText = questions[category][id]['question'];
 
-	let answers = questions[id]['incorrect_answers'];
+	let answers = questions[category][id]['incorrect_answers'];
 
 	// map incorrect answers 
 	var answerArr = answers.map(function(answer) {
@@ -42,7 +46,7 @@ router.get('/:id', (req, res) => {
 
 	// map correct answer
 	var correctAnswer = {};
-	correctAnswer.text = (questions[id]['correct_answer']);
+	correctAnswer.text = (questions[category][id]['correct_answer']);
 	correctAnswer.correct = 't';
 
 	// add correct answer to array
@@ -90,7 +94,13 @@ router.post('/', (req, res) => {
 	res.cookie('userScore', score);
 	res.cookie('completedQuestions', completed);
 
-	res.redirect("/cards");
+	// end game after X questions.
+	if (completed >= maxQuestions) {
+		res.redirect("/end");
+	} else {
+		res.redirect("/cards");
+	}
+	
 });
 
 

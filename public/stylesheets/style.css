@@ -178,10 +178,10 @@ input {
 .card {
   position: relative;
   max-width: 800px;
-  min-height: 425px;
+  /*min-height: 425px;*/
   box-sizing: border-box;
   margin: auto;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   color: #727C85;
   text-align: center;
   border-radius: 20px;
@@ -278,12 +278,16 @@ input {
 
 #content button {
   padding: 8px 10px;
-  font-size: .8em;
+  font-size: .9em;
   margin: auto;
-  color: #C79735;
+  color: #bb723c;
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-  background-color: #F5F3ED;
-  border: 1px solid #C79735;
+  background-color: #fff;
+  border: 2px solid #bb723c;
+}
+
+#content .buttonEnd {
+  font-size: 1em;
 }
 
 #content button {
@@ -292,7 +296,7 @@ input {
 
 #content button:hover {
   cursor: pointer;
-  background-color: #C79735;
+  background-color: #bb723cb3;
   color: #fff;
 }
 
@@ -363,7 +367,7 @@ input {
 }
 
 .catText input {
-  /*visibility: hidden;*/
+  visibility: hidden;
   width: initial;
   height: initial;
 }

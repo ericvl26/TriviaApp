@@ -1,0 +1,13 @@
+extends app
+
+block card
+	section(class='flashcards')
+		.card(class=`card-question`)
+			.card-header
+			h1.card-title Game Over
+			#content
+				h2=`You Scored ${score} out of ${completed}`
+				form(action='/end', method='post')
+					.card-next
+						button.namecard-submit.buttonEnd(type='submit') Play again
+

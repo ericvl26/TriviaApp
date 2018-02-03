@@ -33,6 +33,22 @@ router.post('/hello', (req, res) => {
 	res.redirect("/");
 });
 
+//Route to /end (GET route)
+router.get('/end', (req, res) => {
+	const name = req.cookies.username;
+	const score = req.cookies.userScore;
+	const completed = req.cookies.completedQuestions;
+	const templateData = { name, score, completed }
+	res.render("end", templateData);
+});
+
+//Route to /end (POST route)
+router.post('/end', (req, res) => {
+	res.cookie('userScore', 0);
+	res.cookie('completedQuestions', 0);
+	res.redirect("/");
+});
+
 //Route to /goodbye (POST route)
 router.post('/goodbye', (req, res) => {
 	res.clearCookie('username');	
@@ -48,5 +64,6 @@ router.post('/category', (req, res) => {
 	res.cookie('category', category);
 	res.redirect("cards");
 });
+
 
 module.exports = router

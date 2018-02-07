@@ -55,6 +55,7 @@ router.post('/goodbye', (req, res) => {
 	res.clearCookie('userScore');
 	res.clearCookie('completedQuestions');
 	res.clearCookie('category');
+	res.clearCookie('usedQuestions');
 	res.redirect("hello");
 });
 
@@ -62,6 +63,12 @@ router.post('/goodbye', (req, res) => {
 router.post('/category', (req, res) => {
 	var category = req.body.cat;
 	res.cookie('category', category);
+
+	// store used question array in cookie
+	var used = [];
+	var usedJSON = JSON.stringify(used);
+	res.cookie('usedQuestions', usedJSON);
+
 	res.redirect("cards");
 });
 

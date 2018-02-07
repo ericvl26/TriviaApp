@@ -5,6 +5,7 @@ const { data } = require('../data/triviaData.json');
 const { questions } = data;
 
 const maxQuestions = 5;
+// var usedQuestions = [];
 
 // const { data1 } = require('../data/flashcardData.json');
 // const { cards } = data1;
@@ -12,15 +13,34 @@ const maxQuestions = 5;
 // const data = require('..data/flashcardData.json').data;
 // const cards = data.cards;
 
+// Route to /cards (GET route)
 router.get('/', (req, res) => {
+
 	const category = req.cookies.category;
 	const numberOfQuestions = questions[category].length;
-	const questionId = Math.floor( Math.random() * numberOfQuestions );
+	var questionId;
+
+	// recall previously used questions array from cookie
+	let prevUsedQ = req.cookies.usedQuestions;
+	let usedQuestions = JSON.parse(prevUsedQ);
+
+	// set questionId to a new question.  Reset if question has already been asked.  
+	do {
+ 		questionId = Math.floor( Math.random() * numberOfQuestions );
+	}
+	while (usedQuestions.includes(questionId));
+
+	// updated used questions array
+	usedQuestions.push(questionId);
+	let questionJSON = JSON.stringify(usedQuestions);
+	// console.log(usedQuestions);
+	res.cookie('usedQuestions', questionJSON);
 	
 	res.redirect(`/cards/${questionId}`);
 });
 
-//treats text after : as a variable in route => req.params.id
+// Route to /cards/:id (GET route)
+// treats text after : as a variable in route => req.params.id
 router.get('/:id', (req, res) => {
 
 	//req.query.side => gets value from http://localhost:3000/cards/4?side=answer  (*query string)
